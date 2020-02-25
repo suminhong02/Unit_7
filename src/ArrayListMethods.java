@@ -22,9 +22,28 @@ public class ArrayListMethods {
     public static ArrayList<Double> firstAndLast(){
         ArrayList<Double> list = new ArrayList<>();
         int counter = 0;
-        while(counter<)
-        list.add(scan.nextDouble());
-        list.add(scan.nextDouble());
+        while(scan.nextDouble() != 0){
+            System.out.println("Enter a decimal number: ");
+            list.add(scan.nextDouble());
+            counter++;
+        }
+        System.out.println("There are "+ counter + "numbers in your list.");
+        System.out.println("First: "+ list.subList(0,1));
+        System.out.println("Last: "+ list.subList(counter,counter+1));
+        return list;
+    }
+
+    public static ArrayList<Double> getNumbers(){
+        ArrayList<Double> list = new ArrayList<>();
+
+       list.add(scan.nextDouble());
+       list.add(scan.nextDouble());
+       list.add(scan.nextDouble());
+
+       return list;
+    }
+
+    public static ArrayList<Double> arrangeList(ArrayList<Double> numbers){
 
     }
 }
