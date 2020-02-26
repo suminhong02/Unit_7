@@ -44,6 +44,16 @@ public class ArrayListMethods {
     }
 
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers){
+        ArrayList<Double> list = new ArrayList<>();
+        double larger = numbers.get(0);
+        int i = 0;
+        while(i<numbers.size()){
+            if(numbers.get(i)>numbers.get(i+1)){
 
+            }
+            i++;
+        }
+        return list;
     }
+
 }
