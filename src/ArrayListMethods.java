@@ -11,25 +11,30 @@ public class ArrayListMethods {
         list.add(7);
         list.add(12);
         list.add(-1);
-        System.out.println(numberList());
+        System.out.println(list);
         list.add(2,10);
         list.set(1,9);
-        System.out.println(numberList());
+        System.out.println(list);
         list.remove(4);
-        return numberList();
+        return list;
     }
 
     public static ArrayList<Double> firstAndLast(){
+        ArrayList<Double> list2 = new ArrayList<>();
         ArrayList<Double> list = new ArrayList<>();
         int counter = 0;
-        while(scan.nextDouble() != 0){
-            System.out.println("Enter a decimal number: ");
-            list.add(scan.nextDouble());
-            counter++;
+
+        while(true){
+            double scanning  = scan.nextDouble();
+            if(scanning == 0){
+                break;
+            }
+            list.add(scanning);
         }
-        System.out.println("There are "+ counter + "numbers in your list.");
-        System.out.println("First: "+ list.subList(0,1));
-        System.out.println("Last: "+ list.subList(counter,counter+1));
+        list2.add((double)list.size());
+        list2.add(list.get(0));
+        list2.add(list.get(list.size()));
+
         return list;
     }
 
