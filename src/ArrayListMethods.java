@@ -33,9 +33,9 @@ public class ArrayListMethods {
         }
         list2.add((double)list.size());
         list2.add(list.get(0));
-        list2.add(list.get(list.size()));
+        list2.add(list.get(list.size()-1));
 
-        return list;
+        return list2;
     }
 
     public static ArrayList<Double> getNumbers(){
@@ -51,14 +51,20 @@ public class ArrayListMethods {
     public static ArrayList<Double> arrangeList(ArrayList<Double> numbers){
         ArrayList<Double> list = new ArrayList<>();
         double larger = numbers.get(0);
-        int i = 0;
-        while(i<numbers.size()){
-            if(numbers.get(i)>numbers.get(i+1)){
+        double smaller;
+        int i = numbers.size()-1;
+        while(i>0){
+            if(numbers.get(i) < numbers.get(i-1)){
+                larger = numbers.get(i-1);
+                smaller = numbers.get(i);
+                numbers.set(i, larger);
+                numbers.set(i-1,smaller);
 
             }
-            i++;
+
+            i--;
         }
-        return list;
+        return numbers;
     }
 
 }
