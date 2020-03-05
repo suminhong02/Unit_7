@@ -35,38 +35,38 @@ public class SortingTest {
         assertEquals(false, Sorting.isSorted(myList));
     }
 
-//    @Test
-//    public void eGetDonorFile() throws IOException{
-//        ArrayList<Donor> donors = new ArrayList<>();
-//        donors.add(new Donor("Maria", 125.0));
-//        donors.add(new Donor("Isaac", 105.75));
-//        donors.add(new Donor("Jane", 98.5));
-//        donors.add(new Donor("Matsu", 61.99));
-//        donors.add(new Donor("Susan", 50.0));
-//        donors.add(new Donor("Carl", 45.25));
-//        donors.add(new Donor("Tiffany", 38.0));
-//        donors.add(new Donor("Sam", 25.0));
-//        donors.add(new Donor("Alonzo", 18.65));
-//
-//       ArrayList<Donor> unsorted =  DonorRunner.readFile();
-//       DonorRunner.sortDonors(unsorted);
-//
-//       boolean same = true;
-//
-//       for (int i=0; i<donors.size(); i++) {
-//           Donor donor1 = donors.get(i);
-//           Donor donor2 = unsorted.get(i);
-//
-//           if (!donor1.getName().equals(donor2.getName()) || donor1.getAmount() != donor2.getAmount()) {
-//               same = false;
-//               break;
-//           }
-//       }
-//
-//       assertTrue(same);
-//
-//
-//
-//
-//    }
+    @Test
+    public void eGetDonorFile() throws IOException{
+        ArrayList<Donor> donors = new ArrayList<>();
+        donors.add(new Donor("Maria", 125.0));
+        donors.add(new Donor("Isaac", 105.75));
+        donors.add(new Donor("Jane", 98.5));
+        donors.add(new Donor("Matsu", 61.99));
+        donors.add(new Donor("Susan", 50.0));
+        donors.add(new Donor("Carl", 45.25));
+        donors.add(new Donor("Tiffany", 38.0));
+        donors.add(new Donor("Sam", 25.0));
+        donors.add(new Donor("Alonzo", 18.65));
+
+       ArrayList<Donor> unsorted =  DonorRunner.readFile();
+       DonorRunner.sortDonors(unsorted);
+
+       boolean same = true;
+
+       for (int i=0; i<donors.size(); i++) {
+           Donor donor1 = donors.get(i);
+           Donor donor2 = unsorted.get(i);
+
+           if (!donor1.getName().equals(donor2.getName()) || donor1.getAmount() != donor2.getAmount()) {
+               same = false;
+               break;
+           }
+       }
+
+       assertTrue(same);
+
+
+
+
+    }
 }
