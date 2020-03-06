@@ -22,9 +22,11 @@ public class DonorRunner {
         for(int i = 1; i < list.size(); i++){
             double money = list.get(i).getAmount();
             int k = i-1;
-            while(k >= 0 && money < list.get(k).getAmount() ){
-                list.set(k+1, list.get(k));
-                k--;
+            while(k >= 0 && money > list.get(k).getAmount() ){
+                list.set(k, list.get(i));
+                k++;
+                //list.remove(k+1);
+                //list.add(k+1, list.get(k));
             }
             list.set(k+1, list.get(i));
         }
