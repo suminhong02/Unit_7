@@ -25,6 +25,7 @@ public class SelfAdjusting {
         return array;
     }
 
+
     /**
      * A method with no parameter and return. It initially makes a new list with even numbers from 2 to 20 and changes it
      * with the list by the user by comparing the numbers in two lists and if there is a different number on the user's list,
@@ -32,6 +33,9 @@ public class SelfAdjusting {
      * Stop the list when there is 0.
      */
     public void adjustList(){
+        /**
+         * create an ArrayList called list that has even numbers from 2 to 20.
+         */
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(2);
         list.add(4);
@@ -43,19 +47,29 @@ public class SelfAdjusting {
         list.add(16);
         list.add(18);
         list.add(20);
-        for(int i = 0; i < array.size(); i++){
-            for(int x = 0; x < list.size(); x++)
-            if(array.get(i) == list.get(x)){
-                list.remove(x);
-                list.add(0,array.get(i));
-            }
-            else if(array.get(i) != list.get(x)){
-                list.add(0,array.get(i));
-            }
-            if(array.get(i) == 0){
-                break;
+
+        /**
+         * while loop that goes through the list and array, comparing each numbers and adding them onto the list.
+         */
+        int counter = 0;
+        while(counter<array.size()) {
+            for (int x = 0; x < list.size(); x++) {
+                if (array.get(counter) == list.get(x)) {
+                    list.remove(x);
+                    list.add(0, array.get(counter));
+                    counter++;
+                    x =-1;
+                }
+                else if (array.get(counter) % 2 != 0){
+                    list.add(0,array.get(counter));
+                    counter++;
+                }
+                }
+            if(array.get(counter) == 0){
+                    break;
             }
         }
-        System.out.println(list);
+        array = list;
+
     }
 }
